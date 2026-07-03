@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghost Innovations LTD</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="icon" type="image/x-icon" href="Images/ghost-logo.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+</head>
+<body>
+
+ <!-- Navigation Bar -->
+<header class="header" >
+  <img src="Images/ghost-title.png" alt="Ghost Innovations Title" class="logo-img"> 
+<nav class="navbar">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</nav>
+</header>
+
+ <!-- Ghost Innovation First Open At Sight Home Page (logo + text) -->
+<section class="home hidden" id="home">
+  <div class="home-content">
+    <h1>About Ghost Innovations</h1>
+    <h3>Digital Tech Company</h3>
+    <p>
+      Ghost Innovations Ltd is a multi-award winning digital tech company based
+      in Teesside specialising in producing ground-breaking products and services since 2018.
+      In addition to our existing products, we have multiple exciting projects in production.
+      For further details please see below…
+    </p>
+  </div>
+  <img class="HomeLogo hidden" src="Images/ghost-logo.png" alt="Ghost Innovations Logo">
+</section>
+
+
+ <!-- Ghost Video AboutUs Videos (flexbox) -->
+<section id="about"> 
+<div class="AboutTitle">
+    <h1>Our Videos</h1>
+</div>
+    <div class="hidden">
+        <div class="Flex-Video-Section">
+            <div class="Flex-Video">
+                <iframe src="https://www.youtube.com/embed/49PhrTK_17U" allowfullscreen></iframe>
+            </div>
+            <div class="Flex-Video">
+                <iframe src="https://www.youtube.com/embed/xHLfXWGavm4" allowfullscreen></iframe>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+ <!-- Ghost App Flex Box -->
+<section id="services">
+<div class="AboutTitle">
+    <h1>Our Services</h1>
+</div>
+    <div class="hidden">
+        <div class="Flex-Section">
+
+            <div class="Flex-Text">
+                <h1>Ghost App</h1>
+                <h2>Digital life goes on...</h2>
+                <p>
+                    Ghost App is a ground breaking tool for creating, storing and sending
+                    messages to friends and loved ones in the future.
+                    The app allows users to record phone calls, video calls,
+                    text messages and picture messages which can be stored and scheduled
+                    for up to 50 years.
+                </p>
+                <a href="https://ghostdigitallifegoeson.com" class="MoreInformationBtn">More Information</a>
+            </div>
+
+            <div class="Flex-Image">
+                <img src="Images/ghost-app.png" alt="Ghost App">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Ghost Shots Flex Box -->
+<section>
+    <div class="hidden">
+        <div class="Flex-Section2">
+
+            <div class="Flex-Image2">
+                <img src="Images/ghost-shots.png" alt="Ghost Shots">
+            </div>
+
+            <div class="Flex-Text2">
+                <h1>Ghost Shots</h1>
+                <h2>75% VOL Shots</h2>
+                <p>
+                    Ghost Shot is a premium vodka-based illuminated liqueur,
+                    served in compact 20 ml vials with a powerful 75% alcohol content.
+                    Designed to stand out, its unique glow effect creates a memorable visual
+                    experience, making it perfect for parties, events, or as a distinctive gift.
+                    More information can be found on our website.
+                </p>
+                <a href="https://www.ghostshot.co.uk/" class="MoreInformationBtn">More Information</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+ <!-- Ghost Innovations Events (Oak Hammock Florida Island) Flex Box -->
+<section>
+    <div class="hidden">
+        <div class="Flex-Section">
+
+            <div class="Flex-Text">
+                <h1>G.I Events</h1>
+                <h2>Oak Hammock Island Resort, Florida</h2>
+                <p>
+                    Ghost Innovations Events is a professional events company offering a
+                    range of holiday and event packages based at the beautiful Oak Hammock
+                    Island Resort in Florida. Whether you’re planning a celebration, group
+                    getaway, or special experience, the team combines stunning surroundings
+                    with expert organisation to create memorable occasions tailored to your needs.
+                </p>
+                <a href="https://oakhammockisland.com" class="MoreInformationBtn">More Information</a>
+            </div>
+
+            <div class="Flex-Image">
+                <img src="Images/ghost-innovations-events.png" alt="Ghost Innovations Events">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+ <!-- Ghost Fantom Alarm Tracking Marker -->
+<section>
+    <div class="hidden">
+        <div class="Flex-Section2">
+
+            <div class="Flex-Image2">
+                <img src="Images/fantom.png" alt="Fantom">
+            </div>
+
+            <div class="Flex-Text2">
+                <h1>Fantom</h1>
+                <h2>Fire Alarm Tracking Marker</h2>
+                <p>
+                    Fantom is a ground-breaking fire alarm system designed for
+                    both rural and urban environments. Currently in development,
+                    it aims to deliver advanced protection and reliability across
+                    a wide range of settings, with more information coming soon.
+                </p>
+                <a href="https://fantomalarm.com/" class="MoreInformationBtn">More Information</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+ <!-- Ghost Contact Us (Socials + API Map location) -->
+<section id="contact"> 
+<div class="ContactUs">
+    <h1>Contact Us</h1>
+</div>
+ </section>
+ <section class="hidden">
+  <div class="Contact-Us-Section">
+    <!-- Left Column - Social Media -->
+    <div class="Contact-Text">
+      <h1>Social Media</h1>
+      <h2>Follow our socials</h2>
+
+      <div class="social-icons">
+        <a href="https://x.com/GhostInnov" aria-label="Twitter">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="https://www.tiktok.com/@ghostinnovationsltd" aria-label="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://www.facebook.com/GhostApp1/" aria-label="Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://www.youtube.com/@ghostinnovations4269" aria-label="Youtube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="mailto:info.ghostinnovations@gmail.com" aria-label="Email">
+          <i class="fa-brands fa-google"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column - Location -->
+    <div class="Locate-Text">
+      <h1>Location</h1>
+      <h2>Find us in office</h2>
+      
+      <div class="social-icons">
+        <a>Boho 5, Bridge Street East, Middlesbrough, TS2 1NY</a>
+      </div>
+    </div>
+  </div>
+
+
+<!--Map API using JS (Requires no API key)-->
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</div> 
+</section>
+
+ <!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-content">
+
+        <!-- Compamny Name -->
+        <div class="footer-section">
+            <h3>Ghost Innovations LTD</h3>
+            <p>Simple, secure, and reliable services.</p>
+        </div>
+
+
+        <!-- Social icons of FOOTER -->
+        <div class="footer-section">
+            <h4>Social</h4>
+            <div class="footer-socials">
+                <a href="https://x.com/GhostInnov" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.tiktok.com/@ghostinnovationsltd" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/GhostApp1/" aria-label="FaceBook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.youtube.com/@ghostinnovations4269" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="mailto:info.ghostinnovations@gmail.com" aria-label="Email"><i class="fa-brands fa-google"></i></a>
+            </div>
+                <div class="footer-socials">
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--  FOOTER bottom bit -->
+    <div class="footer-bottom">
+        © 2026 Ghost Innovations LTD • All rights reserved
+    </div>
+</footer>
+
+<!--  JS file linking -->
+<script defer src="JS/navscroll.js"></script>
+<script defer src="JS/map.js"></script>
+<script defer src="JS/scripts.js"></script>
+<script defer src="JS/animations.js"></script>
+</body>
+</html>

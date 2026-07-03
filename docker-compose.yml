@@ -1,0 +1,13 @@
+services:
+  fantom-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ghostinnovations-website
+    restart: unless-stopped
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true
