@@ -29,4 +29,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/ghostinnovations/GhostInnovationsLTD:latest
+          tags: ghcr.io/ghostinnovations/ghostinnovationsltd:latest
