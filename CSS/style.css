@@ -41,7 +41,7 @@ html, body {
 }
 
 section {
-  scroll-margin-top: 20vh; /* adjust based on your header height */
+  scroll-margin-top: 20vh;
 }
 
 .logo-img {
@@ -234,12 +234,12 @@ section {
 
 .Flex-Video-Section {
     display: flex;
-    align-items: center;          /* vertical alignment */
-    justify-content: center;      /* center videos horizontally */
-    max-width: 1200px;            /* set a max-width you want */
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
     margin: 10px auto 30px;
-    padding: 0 150px;             /* optional horizontal padding */
-    gap: 100px;                    /* smaller gap = closer together */
+    padding: 0 150px;
+    gap: 100px;
     margin-bottom: 15vh;
     flex: 1;
 }
@@ -253,7 +253,6 @@ section {
     object-fit: cover;
 }
 
-/* Carousel test */
 .carousel {
         position: relative;
         width: 80%;
@@ -319,16 +318,13 @@ section {
     }
 
 
-/*Flex section Normal - 1  (the services ghost do)*/
-
-
 .Flex-Section {
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 1500px;
     margin: 10px auto 30px;
-    padding: 0 150px;   /* matches H1 horizontal feel */
+    padding: 0 150px;
     gap: 60px;
     margin-bottom: 15vh;
     
@@ -349,7 +345,7 @@ section {
     margin: 0 0 20px 0;
     text-align: left;
     line-height: 1.1;
-    font-size: 30px;   /* slightly smaller than main H1 */
+    font-size: 30px;
     color: #00abf0;
 }
 
@@ -367,7 +363,6 @@ section {
     object-fit: cover;
 }
 
-/*More Information Button for all service flexboxes */
 .MoreInformationBtn {
 border: 1px solid rgb(255, 255, 255);
 border-radius: 50px;
@@ -388,7 +383,6 @@ color: #00abf0;
 transform: translateX(15px)
 }
 
-/* Flex Section 2 Inversed (the services ghost do)*/
 
 .Flex-Section2 {
     display: flex;
@@ -396,7 +390,7 @@ transform: translateX(15px)
     justify-content: space-between;
     max-width: 1500px;
     margin: 10px auto 30px;
-    padding: 0 150px;   /* matches H1 horizontal feel */
+    padding: 0 150px;
     gap: 60px;
     margin-bottom: 15vh;
     
@@ -417,7 +411,7 @@ transform: translateX(15px)
     margin: 0 0 20px 0;
     text-align: left;
     line-height: 1.1;
-    font-size: 30px;   /* slightly smaller than main H1 */
+    font-size: 30px;
     color: #00abf0;
 }
 
@@ -450,7 +444,7 @@ transform: translateX(15px)
     width: 100px;
     height: 4px;
     background: #00abf0;
-    margin: 12px auto 0;   /* centers it */
+    margin: 12px auto 0;
     border-radius: 2px;
 }
 
@@ -481,7 +475,7 @@ transform: translateX(15px)
     margin: 0 0 20px 0;
     text-align: center;
     line-height: 1.1;
-    font-size: 30px;   /* slightly smaller than main H1 */
+    font-size: 30px;
     color: #00abf0;
 }
 
@@ -531,7 +525,7 @@ transform: translateX(15px)
     margin: 0 0 20px 0;
     text-align: center;
     line-height: 1.1;
-    font-size: 30px;   /* slightly smaller than main H1 */
+    font-size: 30px;
     color: #00abf0;
 }
 
@@ -551,7 +545,7 @@ transform: translateX(15px)
 
 }
 
-.Contact-Text,   /* fixes the kind of off center look */
+.Contact-Text,
 .Locate-Text {
     flex: 1;
 }
@@ -685,7 +679,7 @@ transform: translateX(15px)
     border-radius: 50%;
     transition: all 0.3s ease;
     border: 1px solid rgba(0, 171, 240, 0.2);
-    text-decoration: none; /* Removes annoying underline */
+    text-decoration: none;
 }
 
 
