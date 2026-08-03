@@ -378,7 +378,7 @@ section {
     outline: none;
 }
 
-.Locate-Text a {
+.Locate-Text address {
     max-width: 310px;
     margin: 10px auto 0;
     display: flex;
@@ -389,6 +389,7 @@ section {
     line-height: 1.5;
     text-align: center;
     text-decoration: none;
+    font-style: normal;
 }
 
 #map {
@@ -780,7 +781,7 @@ section {
         height: 46px;
     }
 
-    .Locate-Text a {
+    .Locate-Text address {
         max-width: 280px;
         font-size: 16px;
         line-height: 1.6;
