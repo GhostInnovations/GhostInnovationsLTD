@@ -1,238 +1,675 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#11151a">
-  <meta name="description" content="Ghost Innovations LTD is a Teesside digital technology company developing products, services, and events.">
-  <link rel="canonical" href="https://www.ghostinnovationsltd.com/">
-  <script src="JS/head.js"></script>
-  <title>Ghost Innovations LTD</title>
-  <link rel="stylesheet" href="CSS/style.css">
-  <link rel="icon" type="image/png" href="Images/ghost-logo.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>
+Ghost Innovations LTD | Future Technology
+</title>
+
+<meta name="description"
+content="Ghost Innovations LTD creates future-focused technology products, digital experiences and innovative solutions from Teesside, UK.">
+
+<meta name="theme-color"
+content="#02060b">
+
+<link rel="canonical"
+href="https://www.ghostinnovationsltd.com/">
+
+<link rel="icon"
+href="Images/ghost-logo.png"
+type="image/png">
+
+<script src="JS/head.js"></script>
+
+<link rel="stylesheet"
+href="CSS/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
 </head>
+
 <body>
 
-<header class="header" >
-  <img src="Images/ghost-title.png" alt="Ghost Innovations Title" class="logo-img">
-  <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-<nav class="navbar" id="primary-navigation">
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
+<!-- LOADING SCREEN -->
+
+<div class="loader">
+
+<div class="loader-logo">
+
+<img src="Images/ghost-logo.png"
+alt="Ghost Innovations">
+
+</div>
+
+<p>
+INITIALISING GHOST SYSTEM
+</p>
+
+<div class="loader-bar">
+
+<span></span>
+
+</div>
+
+</div>
+
+<!-- BACKGROUND EFFECTS -->
+
+<div class="background">
+
+<div class="grid"></div>
+
+<div class="glow glow-one"></div>
+
+<div class="glow glow-two"></div>
+
+</div>
+
+<header class="header">
+
+<a href="#home"
+class="brand">
+
+<img src="Images/ghost-title.png"
+alt="Ghost Innovations LTD"
+class="logo-img">
+
+</a>
+
+<button class="nav-toggle"
+aria-label="Open navigation"
+aria-expanded="false">
+
+<span></span> <span></span> <span></span>
+
+</button>
+
+<nav class="navbar">
+
+<a href="#home">
+Home
+</a>
+
+<a href="#about">
+About
+</a>
+
+<a href="#projects">
+Projects
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
 </nav>
+
 </header>
 
-<section class="home hidden" id="home">
-  <div class="home-content">
-    <h1>About Ghost Innovations</h1>
-    <h3>Digital Tech Company</h3>
-    <p>
-      Ghost Innovations Ltd is a multi-award winning digital tech company based
-      in Teesside specialising in producing ground-breaking products and services since 2018.
-      In addition to our existing products, we have multiple exciting projects in production.
-      For further details please see below…
-    </p>
-  </div>
-  <img class="HomeLogo hidden" src="Images/ghost-logo.png" alt="Ghost Innovations Logo">
-</section>
+<main>
 
+<!-- HERO -->
 
-<section id="about"> 
-<div class="AboutTitle">
-    <h1>Our Videos</h1>
+<section class="hero"
+id="home">
+
+<div class="hero-content reveal">
+
+<p class="system-status">
+
+SYSTEM STATUS: <span>
+ONLINE </span>
+
+</p>
+
+<h1>
+
+WE CREATE
+
+<span>
+TECHNOLOGY
+</span>
+
+THAT OUTLIVES TIME
+
+</h1>
+
+<p class="hero-description">
+
+Ghost Innovations LTD is a Teesside technology company
+creating groundbreaking products, digital experiences
+and future-focused solutions designed to connect,
+protect and inspire.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#projects"
+class="button primary">
+
+Explore Projects
+
+</a>
+
+<a href="#contact"
+class="button secondary">
+
+Contact Us
+
+</a>
+
 </div>
-    <div class="hidden">
-        <div class="Flex-Video-Section">
-            <div class="Flex-Video">
-                <iframe src="https://www.youtube-nocookie.com/embed/49PhrTK_17U" title="Ghost Innovations video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-presentation" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <div class="Flex-Video">
-                <iframe src="https://www.youtube-nocookie.com/embed/xHLfXWGavm4" title="Ghost Innovations video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-presentation" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
 
-        </div>
-    </div>
-</section>
-
-<section id="services">
-<div class="AboutTitle">
-    <h1>Our Services</h1>
 </div>
-    <div class="hidden">
-        <div class="Flex-Section">
 
-            <div class="Flex-Text">
-                <h1>Ghost App</h1>
-                <h2>Digital life goes on...</h2>
-                <p>
-                    Ghost App is a ground breaking tool for creating, storing and sending
-                    messages to friends and loved ones in the future.
-                    The app allows users to record phone calls, video calls,
-                    text messages and picture messages which can be stored and scheduled
-                    for up to 50 years.
-                </p>
-                <a href="https://ghostdigitallifegoeson.com" class="MoreInformationBtn">More Information</a>
-            </div>
+<div class="hero-logo reveal">
 
-            <div class="Flex-Image">
-                <img src="Images/ghost-app.png" alt="Ghost App">
-            </div>
+<div class="logo-ring"></div>
 
-        </div>
-    </div>
-</section>
+<img src="Images/ghost-logo.png"
+alt="Ghost Innovations Logo">
 
-<section>
-    <div class="hidden">
-        <div class="Flex-Section2">
-
-            <div class="Flex-Image2">
-                <img src="Images/ghost-shots.png" alt="Ghost Shots">
-            </div>
-
-            <div class="Flex-Text2">
-                <h1>Ghost Shots</h1>
-                <h2>75% VOL Shots</h2>
-                <p>
-                    Ghost Shot is a premium vodka-based illuminated liqueur,
-                    served in compact 20 ml vials with a powerful 75% alcohol content.
-                    Designed to stand out, its unique glow effect creates a memorable visual
-                    experience, making it perfect for parties, events, or as a distinctive gift.
-                    More information can be found on our website.
-                </p>
-                <a href="https://www.ghostshot.co.uk/" class="MoreInformationBtn">More Information</a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="hidden">
-        <div class="Flex-Section">
-
-            <div class="Flex-Text">
-                <h1>G.I Events</h1>
-                <h2>Oak Hammock Island Resort, Florida</h2>
-                <p>
-                    Ghost Innovations Events is a professional events company offering a
-                    range of holiday and event packages based at the beautiful Oak Hammock
-                    Island Resort in Florida. Whether you're planning a celebration, group
-                    getaway, or special experience, the team combines stunning surroundings
-                    with expert organisation to create memorable occasions tailored to your needs.
-                </p>
-                <a href="https://oakhammockisland.com" class="MoreInformationBtn">More Information</a>
-            </div>
-
-            <div class="Flex-Image">
-                <img src="Images/ghost-innovations-events.png" alt="Ghost Innovations Events">
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="hidden">
-        <div class="Flex-Section2">
-
-            <div class="Flex-Image2">
-                <img src="Images/fantom.png" alt="Fantom">
-            </div>
-
-            <div class="Flex-Text2">
-                <h1>Fantom</h1>
-                <h2>Fire Alarm Tracking Marker</h2>
-                <p>
-                    Fantom is a ground-breaking fire alarm system designed for
-                    both rural and urban environments. Currently in development,
-                    it aims to deliver advanced protection and reliability across
-                    a wide range of settings, with more information coming soon.
-                </p>
-                <a href="https://fantomalarm.com/" class="MoreInformationBtn">More Information</a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section id="contact"> 
-<div class="ContactUs">
-    <h1>Contact Us</h1>
 </div>
- </section>
- <section class="hidden">
-  <div class="Contact-Us-Section">
-    <div class="Contact-Text">
-      <h1>Social Media</h1>
-      <h2>Follow our socials</h2>
-      <div class="social-icons">
-        <a href="https://x.com/GhostInnov" aria-label="Twitter">
-          <i aria-hidden="true" class="fa-brands fa-twitter"></i>
-        </a>
-        <a href="https://www.tiktok.com/@ghostinnovationsltd" aria-label="TikTok">
-          <i aria-hidden="true" class="fa-brands fa-tiktok"></i>
-        </a>
-        <a href="https://www.facebook.com/GhostApp1/" aria-label="Facebook">
-          <i aria-hidden="true" class="fa-brands fa-facebook"></i>
-        </a>
-        <a href="https://www.youtube.com/@ghostinnovations4269" aria-label="Youtube">
-          <i aria-hidden="true" class="fa-brands fa-youtube"></i>
-        </a>
-        <a href="mailto:info.ghostinnovations@gmail.com" aria-label="Email">
-          <i aria-hidden="true" class="fa-brands fa-google"></i>
-        </a>
-      </div>
-    </div>
 
-    <div class="Locate-Text">
-      <h1>Location</h1>
-      <h2>Find us in office</h2>
-      
-      <div class="social-icons">
-        <address>Units 3 &amp; 4, North St, Middlesbrough TS6 6AN</address>
-      </div>
-    </div>
-  </div>
+</section>
+
+<!-- STATS -->
+
+<section class="stats reveal">
+
+<div class="stat">
+
+<h2 data-number="2018">
+0
+</h2>
+
+<p>
+Founded
+</p>
+
+</div>
+
+<div class="stat">
+
+<h2 data-number="4">
+0
+</h2>
+
+<p>
+Technology Projects
+</p>
+
+</div>
+
+<div class="stat">
+
+<h2 data-number="3">
+0
+</h2>
+
+<p>
+Industries
+</p>
+
+</div>
+
+<div class="stat">
+
+<h2>
+∞
+</h2>
+
+<p>
+Future Possibilities
+</p>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section"
+id="about">
+
+<div class="section-heading reveal">
+
+<p>
+ABOUT GHOST
+</p>
+
+<h2>
+Our Vision
+</h2>
+
+</div>
+
+<div class="vision-card reveal">
+
+<p>
+
+We build technology that solves real-world problems.
+
+From preserving memories through digital legacy,
+to advanced safety systems and unique experiences,
+Ghost Innovations combines creativity, technology
+and ambition to create products for the future.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- VIDEOS -->
+
+<section class="section reveal">
+
+<div class="section-heading">
+
+<p>
+MEDIA
+</p>
+
+<h2>
+Inside Ghost Innovations
+</h2>
+
+</div>
+
+<div class="video-grid">
+
+<div class="video-card">
+
+<iframe
+src="https://www.youtube-nocookie.com/embed/49PhrTK_17U"
+title="Ghost Innovations video"
+loading="lazy"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="video-card">
+
+<iframe
+src="https://www.youtube-nocookie.com/embed/xHLfXWGavm4"
+title="Ghost Innovations showcase"
+loading="lazy"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section class="section"
+id="projects">
+
+<div class="section-heading reveal">
+
+<p>
+OUR TECHNOLOGY
+</p>
+
+<h2>
+Current Projects
+</h2>
+
+</div>
+
+<div class="projects">
+
+<article class="project-card reveal">
+
+<div class="project-image">
+
+<img src="Images/ghost-app.png"
+alt="Ghost App">
+
+</div>
+
+<div class="project-info">
+
+<span>
+DIGITAL LEGACY
+</span>
+
+<h3>
+Ghost App
+</h3>
+
+<h4>
+Digital life goes on...
+</h4>
+
+<p>
+
+Create, store and send future messages
+including texts, videos and memories
+for years to come.
+
+</p>
+
+<div class="tags">
+
+<span>
+Future Messaging
+</span>
+
+<span>
+Digital Storage
+</span>
+
+</div>
+
+<a href="https://ghostdigitallifegoeson.com"
+target="_blank"
+rel="noopener noreferrer"
+class="button secondary">
+
+Explore
+
+</a>
+
+</div>
+
+</article>
+
+<article class="project-card reverse reveal">
+
+<div class="project-image">
+
+<img src="Images/ghost-shots.png"
+alt="Ghost Shots">
+
+</div>
+
+<div class="project-info">
+
+<span>
+EXPERIENCE
+</span>
+
+<h3>
+Ghost Shots
+</h3>
+
+<h4>
+75% VOL Illuminated Liqueur
+</h4>
+
+<p>
+
+A premium visual experience designed
+for celebrations, events and memorable moments.
+
+</p>
+
+<div class="tags">
+
+<span>
+Premium
+</span>
+
+<span>
+Events
+</span>
+
+</div>
+
+<a href="https://www.ghostshot.co.uk/"
+target="_blank"
+rel="noopener noreferrer"
+class="button secondary">
+
+Explore
+
+</a>
+
+</div>
+
+</article>
+
+<article class="project-card reveal">
+
+<div class="project-image">
+
+<img src="Images/ghost-innovations-events.png"
+alt="Ghost Innovations Events">
+
+</div>
+
+<div class="project-info">
+
+<span>
+EXPERIENCES
+</span>
+
+<h3>
+G.I Events
+</h3>
+
+<h4>
+Oak Hammock Island Resort
+</h4>
+
+<p>
+
+Premium events and experiences
+combining luxury locations with expert organisation.
+
+</p>
+
+<div class="tags">
+
+<span>
+Travel
+</span>
+
+<span>
+Events
+</span>
+
+</div>
+
+<a href="https://oakhammockisland.com"
+target="_blank"
+rel="noopener noreferrer"
+class="button secondary">
+
+Explore
+
+</a>
+
+</div>
+
+</article>
+
+<article class="project-card reverse reveal">
+
+<div class="project-image">
+
+<img src="Images/fantom.png"
+alt="Fantom fire alarm system">
+
+</div>
+
+<div class="project-info">
+
+<span>
+SAFETY TECHNOLOGY
+</span>
+
+<h3>
+Fantom
+</h3>
+
+<h4>
+Fire Alarm Tracking Marker
+</h4>
+
+<p>
+
+A next-generation fire safety system
+designed for rural and urban environments.
+
+</p>
+
+<div class="tags">
+
+<span>
+Safety
+</span>
+
+<span>
+Innovation
+</span>
+
+</div>
+
+<a href="https://fantomalarm.com/"
+target="_blank"
+rel="noopener noreferrer"
+class="button secondary">
+
+Explore
+
+</a>
+
+</div>
+
+</article>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section"
+id="contact">
+
+<div class="section-heading reveal">
+
+<p>
+CONNECT
+</p>
+
+<h2>
+Contact Ghost Innovations
+</h2>
+
+</div>
+
+<div class="contact-grid reveal">
+
+<div>
+
+<h3>
+Social Networks
+</h3>
+
+<div class="social-icons">
+
+<a href="https://x.com/GhostInnov"
+aria-label="X">
+
+<i class="fa-brands fa-x-twitter"></i>
+
+</a>
+
+<a href="https://www.tiktok.com/@ghostinnovationsltd"
+aria-label="TikTok">
+
+<i class="fa-brands fa-tiktok"></i>
+
+</a>
+
+<a href="https://www.facebook.com/GhostApp1/"
+aria-label="Facebook">
+
+<i class="fa-brands fa-facebook"></i>
+
+</a>
+
+<a href="https://www.youtube.com/@ghostinnovations4269"
+aria-label="YouTube">
+
+<i class="fa-brands fa-youtube"></i>
+
+</a>
+
+</div>
+
+</div>
+
+<div>
+
+<h3>
+HQ LOCATION
+</h3>
+
+<address>
+
+Units 3 & 4,
+North St,
+Middlesbrough TS6 6AN
+
+</address>
+
+</div>
+
+</div>
 
 <div id="map"></div>
-</div> 
+
 </section>
 
-<footer class="site-footer">
-    <div class="footer-content">
-        <div class="footer-section">
-            <h3>Ghost Innovations LTD</h3>
-            <p>Simple, secure, and reliable services.</p>
-        </div>
-        <div class="footer-section">
-            <h4>Social</h4>
-            <div class="footer-socials">
-                <a href="https://x.com/GhostInnov" aria-label="Twitter"><i aria-hidden="true" class="fa-brands fa-twitter"></i></a>
-                <a href="https://www.tiktok.com/@ghostinnovationsltd" aria-label="TikTok"><i aria-hidden="true" class="fa-brands fa-tiktok"></i></a>
-                <a href="https://www.facebook.com/GhostApp1/" aria-label="FaceBook"><i aria-hidden="true" class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.youtube.com/@ghostinnovations4269" aria-label="Youtube"><i aria-hidden="true" class="fa-brands fa-youtube"></i></a>
-                <a href="mailto:info.ghostinnovations@gmail.com" aria-label="Email"><i aria-hidden="true" class="fa-brands fa-google"></i></a>
-            </div>
-            </div>
-    </div>
+</main>
 
-    <div class="footer-bottom">
-        © 2026 Ghost Innovations LTD • All rights reserved
-    </div>
+<footer class="footer">
+
+<h3>
+GHOST INNOVATIONS LTD
+</h3>
+
+<p>
+BUILDING TOMORROW'S TECHNOLOGY
+</p>
+
+<div class="footer-bottom">
+
+© 2026 Ghost Innovations LTD
+
+</div>
+
 </footer>
 
-<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script defer src="JS/scripts.js"></script>
+<script defer
+src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+<script defer
+src="JS/scripts.js">
+</script>
+
 </body>
+
 </html>
