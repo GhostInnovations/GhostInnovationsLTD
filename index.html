@@ -7,64 +7,73 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5">
+
+<meta name="theme-color" content="#02060b">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="description"
+content="Ghost Innovations LTD is a Teesside technology company creating innovative digital products, services and experiences.">
+
+<link rel="canonical"
+href="https://www.ghostinnovationsltd.com/">
+
+<link rel="manifest" href="manifest.json">
+
+<link rel="apple-touch-icon"
+href="Images/ghost-logo.png">
 
 <title>
 Ghost Innovations LTD | Future Technology
 </title>
 
-<meta name="description"
-content="Ghost Innovations LTD creates future-focused technology products, digital experiences and innovative solutions from Teesside, UK.">
-
-<meta name="theme-color"
-content="#02060b">
-
-<link rel="canonical"
-href="https://www.ghostinnovationsltd.com/">
-
 <link rel="icon"
-href="Images/ghost-logo.png"
-type="image/png">
-
-<script src="JS/head.js"></script>
+type="image/png"
+href="Images/ghost-logo.png">
 
 <link rel="stylesheet"
 href="CSS/style.css">
 
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+integrity="sha512-xh60T..."
+crossorigin="anonymous"
+referrerpolicy="no-referrer">
 
 <link rel="stylesheet"
-href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIINfQ..."
+crossorigin="">
+
+<script src="JS/head.js"></script>
+
+<!-- SEO STRUCTURED DATA -->
+
+<script type="application/ld+json">
+
+{
+"@context":"https://schema.org",
+"@type":"Organization",
+"name":"Ghost Innovations LTD",
+"url":"https://www.ghostinnovationsltd.com",
+"logo":"https://www.ghostinnovationsltd.com/Images/ghost-logo.png",
+"description":"Technology company creating innovative digital products and services.",
+"address":{
+"@type":"PostalAddress",
+"streetAddress":"Units 3 & 4 North Street",
+"addressLocality":"Middlesbrough",
+"postalCode":"TS6 6AN",
+"addressCountry":"UK"
+}
+}
+
+</script>
 
 </head>
 
 <body>
-
-<!-- LOADING SCREEN -->
-
-<div class="loader">
-
-<div class="loader-logo">
-
-<img src="Images/ghost-logo.png"
-alt="Ghost Innovations">
-
-</div>
-
-<p>
-INITIALISING GHOST SYSTEM
-</p>
-
-<div class="loader-bar">
-
-<span></span>
-
-</div>
-
-</div>
-
-<!-- BACKGROUND EFFECTS -->
 
 <div class="background">
 
@@ -76,19 +85,33 @@ INITIALISING GHOST SYSTEM
 
 </div>
 
+<div class="loader">
+
+<div class="loader-logo">
+
+<img src="Images/ghost-logo.png"
+alt="Ghost Innovations">
+
+</div>
+
+<p>
+INITIALISING SYSTEM
+</p>
+
+<div class="loader-bar">
+<span></span>
+</div>
+
+</div>
+
 <header class="header">
 
-<a href="#home"
-class="brand">
-
 <img src="Images/ghost-title.png"
-alt="Ghost Innovations LTD"
-class="logo-img">
-
-</a>
+class="logo-img"
+alt="Ghost Innovations LTD">
 
 <button class="nav-toggle"
-aria-label="Open navigation"
+aria-label="Open menu"
 aria-expanded="false">
 
 <span></span> <span></span> <span></span>
@@ -105,8 +128,8 @@ Home
 About
 </a>
 
-<a href="#projects">
-Projects
+<a href="#services">
+Services
 </a>
 
 <a href="#contact">
@@ -119,12 +142,10 @@ Contact
 
 <main>
 
-<!-- HERO -->
-
-<section class="hero"
+<section class="hero reveal"
 id="home">
 
-<div class="hero-content reveal">
+<div class="hero-content">
 
 <p class="system-status">
 
@@ -135,36 +156,33 @@ ONLINE </span>
 
 <h1>
 
-WE CREATE
+Building <span>
+Future </span>
 
-<span>
-TECHNOLOGY
-</span>
-
-THAT OUTLIVES TIME
+Technology
 
 </h1>
 
 <p class="hero-description">
 
-Ghost Innovations LTD is a Teesside technology company
-creating groundbreaking products, digital experiences
-and future-focused solutions designed to connect,
-protect and inspire.
+Ghost Innovations LTD is a multi-award winning
+technology company based in Teesside creating
+innovative digital products, services and
+experiences.
 
 </p>
 
 <div class="hero-buttons">
 
-<a href="#projects"
-class="button primary">
+<a class="button primary"
+href="#services">
 
-Explore Projects
+Explore Products
 
 </a>
 
-<a href="#contact"
-class="button secondary">
+<a class="button secondary"
+href="#contact">
 
 Contact Us
 
@@ -174,7 +192,7 @@ Contact Us
 
 </div>
 
-<div class="hero-logo reveal">
+<div class="hero-logo">
 
 <div class="logo-ring"></div>
 
@@ -185,8 +203,6 @@ alt="Ghost Innovations Logo">
 
 </section>
 
-<!-- STATS -->
-
 <section class="stats reveal">
 
 <div class="stat">
@@ -196,19 +212,19 @@ alt="Ghost Innovations Logo">
 </h2>
 
 <p>
-Founded
+Year Founded
 </p>
 
 </div>
 
 <div class="stat">
 
-<h2 data-number="4">
+<h2 data-number="5">
 0
 </h2>
 
 <p>
-Technology Projects
+Products
 </p>
 
 </div>
@@ -227,27 +243,25 @@ Industries
 
 <div class="stat">
 
-<h2>
-∞
+<h2 data-number="100">
+0
 </h2>
 
 <p>
-Future Possibilities
+Innovation
 </p>
 
 </div>
 
 </section>
 
-<!-- ABOUT -->
-
-<section class="section"
+<section class="section reveal"
 id="about">
 
-<div class="section-heading reveal">
+<div class="section-heading">
 
 <p>
-ABOUT GHOST
+ABOUT
 </p>
 
 <h2>
@@ -256,26 +270,14 @@ Our Vision
 
 </div>
 
-<div class="vision-card reveal">
+<div class="vision-card">
 
-<p>
-
-We build technology that solves real-world problems.
-
-From preserving memories through digital legacy,
-to advanced safety systems and unique experiences,
-Ghost Innovations combines creativity, technology
-and ambition to create products for the future.
-
-</p>
+Ghost Innovations LTD develops technology
+designed to improve digital experiences,
+create meaningful connections and solve
+future challenges.
 
 </div>
-
-</section>
-
-<!-- VIDEOS -->
-
-<section class="section reveal">
 
 <div class="section-heading">
 
@@ -284,7 +286,7 @@ MEDIA
 </p>
 
 <h2>
-Inside Ghost Innovations
+Our Videos
 </h2>
 
 </div>
@@ -294,10 +296,13 @@ Inside Ghost Innovations
 <div class="video-card">
 
 <iframe
-src="https://www.youtube-nocookie.com/embed/49PhrTK_17U"
-title="Ghost Innovations video"
+
 loading="lazy"
-allowfullscreen>
+
+src="https://www.youtube-nocookie.com/embed/49PhrTK_17U"
+
+title="Ghost Innovations">
+
 </iframe>
 
 </div>
@@ -305,10 +310,13 @@ allowfullscreen>
 <div class="video-card">
 
 <iframe
-src="https://www.youtube-nocookie.com/embed/xHLfXWGavm4"
-title="Ghost Innovations showcase"
+
 loading="lazy"
-allowfullscreen>
+
+src="https://www.youtube-nocookie.com/embed/xHLfXWGavm4"
+
+title="Ghost Innovations">
+
 </iframe>
 
 </div>
@@ -317,30 +325,29 @@ allowfullscreen>
 
 </section>
 
-<!-- PROJECTS -->
+<section class="section reveal"
+id="services">
 
-<section class="section"
-id="projects">
-
-<div class="section-heading reveal">
+<div class="section-heading">
 
 <p>
-OUR TECHNOLOGY
+SERVICES
 </p>
 
 <h2>
-Current Projects
+Our Technology
 </h2>
 
 </div>
 
 <div class="projects">
 
-<article class="project-card reveal">
+<article class="project-card">
 
 <div class="project-image">
 
 <img src="Images/ghost-app.png"
+loading="lazy"
 alt="Ghost App">
 
 </div>
@@ -348,7 +355,7 @@ alt="Ghost App">
 <div class="project-info">
 
 <span>
-DIGITAL LEGACY
+DIGITAL PLATFORM
 </span>
 
 <h3>
@@ -361,30 +368,16 @@ Digital life goes on...
 
 <p>
 
-Create, store and send future messages
-including texts, videos and memories
-for years to come.
+A revolutionary platform allowing users
+to create, store and send digital messages
+into the future.
 
 </p>
 
-<div class="tags">
+<a class="button primary"
+href="https://ghostdigitallifegoeson.com">
 
-<span>
-Future Messaging
-</span>
-
-<span>
-Digital Storage
-</span>
-
-</div>
-
-<a href="https://ghostdigitallifegoeson.com"
-target="_blank"
-rel="noopener noreferrer"
-class="button secondary">
-
-Explore
+More Information
 
 </a>
 
@@ -392,11 +385,12 @@ Explore
 
 </article>
 
-<article class="project-card reverse reveal">
+<article class="project-card reverse">
 
 <div class="project-image">
 
 <img src="Images/ghost-shots.png"
+loading="lazy"
 alt="Ghost Shots">
 
 </div>
@@ -404,7 +398,7 @@ alt="Ghost Shots">
 <div class="project-info">
 
 <span>
-EXPERIENCE
+PREMIUM PRODUCT
 </span>
 
 <h3>
@@ -417,29 +411,16 @@ Ghost Shots
 
 <p>
 
-A premium visual experience designed
-for celebrations, events and memorable moments.
+A unique premium vodka-based illuminated
+liqueur experience designed for events,
+celebrations and gifts.
 
 </p>
 
-<div class="tags">
+<a class="button primary"
+href="https://www.ghostshot.co.uk/">
 
-<span>
-Premium
-</span>
-
-<span>
-Events
-</span>
-
-</div>
-
-<a href="https://www.ghostshot.co.uk/"
-target="_blank"
-rel="noopener noreferrer"
-class="button secondary">
-
-Explore
+More Information
 
 </a>
 
@@ -447,11 +428,12 @@ Explore
 
 </article>
 
-<article class="project-card reveal">
+<article class="project-card">
 
 <div class="project-image">
 
 <img src="Images/ghost-innovations-events.png"
+loading="lazy"
 alt="Ghost Innovations Events">
 
 </div>
@@ -459,7 +441,7 @@ alt="Ghost Innovations Events">
 <div class="project-info">
 
 <span>
-EXPERIENCES
+EVENTS
 </span>
 
 <h3>
@@ -467,34 +449,20 @@ G.I Events
 </h3>
 
 <h4>
-Oak Hammock Island Resort
+Florida Experiences
 </h4>
 
 <p>
 
-Premium events and experiences
-combining luxury locations with expert organisation.
+Professional events and holiday packages
+creating unforgettable experiences.
 
 </p>
 
-<div class="tags">
+<a class="button primary"
+href="https://oakhammockisland.com">
 
-<span>
-Travel
-</span>
-
-<span>
-Events
-</span>
-
-</div>
-
-<a href="https://oakhammockisland.com"
-target="_blank"
-rel="noopener noreferrer"
-class="button secondary">
-
-Explore
+More Information
 
 </a>
 
@@ -502,19 +470,20 @@ Explore
 
 </article>
 
-<article class="project-card reverse reveal">
+<article class="project-card reverse">
 
 <div class="project-image">
 
 <img src="Images/fantom.png"
-alt="Fantom fire alarm system">
+loading="lazy"
+alt="Fantom Fire Alarm">
 
 </div>
 
 <div class="project-info">
 
 <span>
-SAFETY TECHNOLOGY
+FUTURE SAFETY
 </span>
 
 <h3>
@@ -522,34 +491,20 @@ Fantom
 </h3>
 
 <h4>
-Fire Alarm Tracking Marker
+Fire Alarm Tracking Technology
 </h4>
 
 <p>
 
-A next-generation fire safety system
-designed for rural and urban environments.
+A next-generation fire alarm system
+currently in development.
 
 </p>
 
-<div class="tags">
+<a class="button primary"
+href="https://fantomalarm.com/">
 
-<span>
-Safety
-</span>
-
-<span>
-Innovation
-</span>
-
-</div>
-
-<a href="https://fantomalarm.com/"
-target="_blank"
-rel="noopener noreferrer"
-class="button secondary">
-
-Explore
+More Information
 
 </a>
 
@@ -561,59 +516,45 @@ Explore
 
 </section>
 
-<!-- CONTACT -->
-
-<section class="section"
+<section class="section reveal"
 id="contact">
 
-<div class="section-heading reveal">
+<div class="section-heading">
 
 <p>
-CONNECT
+CONTACT
 </p>
 
 <h2>
-Contact Ghost Innovations
+Find Us
 </h2>
 
 </div>
 
-<div class="contact-grid reveal">
+<div class="contact-grid">
 
 <div>
 
 <h3>
-Social Networks
+Social Media
 </h3>
 
 <div class="social-icons">
 
-<a href="https://x.com/GhostInnov"
-aria-label="X">
-
-<i class="fa-brands fa-x-twitter"></i>
-
+<a href="https://x.com/GhostInnov">
+<i class="fa-brands fa-twitter"></i>
 </a>
 
-<a href="https://www.tiktok.com/@ghostinnovationsltd"
-aria-label="TikTok">
-
+<a href="https://www.tiktok.com/@ghostinnovationsltd">
 <i class="fa-brands fa-tiktok"></i>
-
 </a>
 
-<a href="https://www.facebook.com/GhostApp1/"
-aria-label="Facebook">
-
+<a href="https://www.facebook.com/GhostApp1/">
 <i class="fa-brands fa-facebook"></i>
-
 </a>
 
-<a href="https://www.youtube.com/@ghostinnovations4269"
-aria-label="YouTube">
-
+<a href="https://www.youtube.com/@ghostinnovations4269">
 <i class="fa-brands fa-youtube"></i>
-
 </a>
 
 </div>
@@ -623,14 +564,15 @@ aria-label="YouTube">
 <div>
 
 <h3>
-HQ LOCATION
+Location
 </h3>
 
 <address>
 
 Units 3 & 4,
-North St,
-Middlesbrough TS6 6AN
+North Street,
+Middlesbrough,
+TS6 6AN
 
 </address>
 
@@ -647,11 +589,11 @@ Middlesbrough TS6 6AN
 <footer class="footer">
 
 <h3>
-GHOST INNOVATIONS LTD
+Ghost Innovations LTD
 </h3>
 
 <p>
-BUILDING TOMORROW'S TECHNOLOGY
+Technology. Innovation. Future.
 </p>
 
 <div class="footer-bottom">
@@ -662,13 +604,11 @@ BUILDING TOMORROW'S TECHNOLOGY
 
 </footer>
 
-<script defer
-src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
-</script>
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-<script defer
-src="JS/scripts.js">
-</script>
+<script defer src="JS/particles.js"></script>
+
+<script defer src="JS/scripts.js"></script>
 
 </body>
 
