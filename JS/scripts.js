@@ -1,66 +1,630 @@
-const menuToggle = document.querySelector(".nav-toggle");
-const navbar = document.querySelector(".navbar");
+"use strict";
 
-if (menuToggle && navbar) {
-    const setMenuState = (isOpen) => {
-        navbar.classList.toggle("is-open", isOpen);
-        document.body.classList.toggle("menu-open", isOpen);
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-        menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+
+
+/* ===============================
+   LOADER
+================================ */
+
+
+window.addEventListener("load", () => {
+
+    const loader =
+    document.querySelector(".loader");
+
+
+    if(loader){
+
+        setTimeout(() => {
+
+            loader.classList.add("hide");
+
+        }, 1800);
+
+    }
+
+});
+
+
+
+
+
+
+
+/* ===============================
+   MOBILE MENU
+================================ */
+
+
+const menuButton =
+document.querySelector(".nav-toggle");
+
+
+const navbar =
+document.querySelector(".navbar");
+
+
+
+if(menuButton && navbar){
+
+
+    const toggleMenu = () => {
+
+
+        const open =
+        navbar.classList.toggle(
+            "is-open"
+        );
+
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            String(open)
+        );
+
+
     };
 
-    menuToggle.addEventListener("click", () => {
-        setMenuState(!navbar.classList.contains("is-open"));
+
+
+    menuButton.addEventListener(
+        "click",
+        toggleMenu
+    );
+
+
+
+
+    navbar
+    .querySelectorAll("a")
+    .forEach(link => {
+
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                navbar.classList.remove(
+                    "is-open"
+                );
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+        );
+
+
     });
 
-    navbar.querySelectorAll('a[href^="#"]').forEach((link) => {
-        link.addEventListener("click", (event) => {
-            const target = document.querySelector(link.hash);
-            if (!target) return;
-            event.preventDefault();
-            setMenuState(false);
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-    });
 
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") setMenuState(false);
-    });
 
-    window.matchMedia("(min-width: 769px)").addEventListener("change", (event) => {
-        if (event.matches) setMenuState(false);
-    });
+
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+
+            if(event.key === "Escape"){
+
+                navbar.classList.remove(
+                    "is-open"
+                );
+
+            }
+
+
+        }
+    );
+
+
 }
 
-const revealItems = document.querySelectorAll(".hidden");
 
-if ("IntersectionObserver" in window) {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add("show");
-            observer.unobserve(entry.target);
-        });
-    }, { threshold: 0.12 });
 
-    revealItems.forEach((item) => revealObserver.observe(item));
-} else {
-    revealItems.forEach((item) => item.classList.add("show"));
+
+
+
+
+
+
+/* ===============================
+   SCROLL REVEAL
+================================ */
+
+
+const revealItems =
+document.querySelectorAll(
+".reveal"
+);
+
+
+
+if(
+window.matchMedia(
+"(prefers-reduced-motion: reduce)"
+).matches
+){
+
+    revealItems.forEach(
+        item =>
+        item.classList.add("show")
+    );
+
+
 }
 
-const mapElement = document.querySelector("#map");
+else {
 
-if (mapElement && window.L) {
-    const office = [54.5820213, -1.1771227];
-    const map = L.map(mapElement, { scrollWheelZoom: false }).setView(office, 16);
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+const observer =
+new IntersectionObserver(
 
-    L.marker(office)
-        .addTo(map)
-        .bindPopup("<b>Units 3, &amp; 4</b><br>North St<br>Middlesbrough TS6 6AN")
-        .openPopup();
+entries => {
+
+
+entries.forEach(entry => {
+
+
+if(entry.isIntersecting){
+
+
+    entry.target.classList.add(
+        "show"
+    );
+
+
+    observer.unobserve(
+        entry.target
+    );
+
+
 }
+
+
+});
+
+
+},
+
+{
+threshold:.15
+}
+
+);
+
+
+
+revealItems.forEach(
+item =>
+observer.observe(item)
+);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+   FAST COUNTERS
+================================ */
+
+
+const counters =
+document.querySelectorAll(
+"[data-number]"
+);
+
+
+
+const counterObserver =
+new IntersectionObserver(
+
+entries => {
+
+
+entries.forEach(entry => {
+
+
+if(entry.isIntersecting){
+
+
+    const counter =
+    entry.target;
+
+
+    const target =
+    Number(
+        counter.dataset.number
+    );
+
+
+    let start =
+    0;
+
+
+    const duration =
+    800;
+
+
+    const startTime =
+    performance.now();
+
+
+
+    function update(time){
+
+
+        const progress =
+        Math.min(
+            (time-startTime)
+            /
+            duration,
+            1
+        );
+
+
+
+        counter.textContent =
+        Math.floor(
+            progress * target
+        );
+
+
+
+        if(progress < 1){
+
+            requestAnimationFrame(
+                update
+            );
+
+        }
+
+        else {
+
+            counter.textContent =
+            target;
+
+        }
+
+
+    }
+
+
+    requestAnimationFrame(
+        update
+    );
+
+
+    counterObserver.unobserve(
+        counter
+    );
+
+
+}
+
+
+});
+
+
+},
+
+{
+threshold:.7
+}
+
+);
+
+
+
+counters.forEach(
+counter =>
+counterObserver.observe(counter)
+);
+
+
+
+
+
+
+
+
+
+/* ===============================
+   SMOOTH SCROLL
+================================ */
+
+
+document
+.querySelectorAll(
+'a[href^="#"]'
+)
+.forEach(anchor => {
+
+
+anchor.addEventListener(
+"click",
+event => {
+
+
+const target =
+document.querySelector(
+anchor.getAttribute("href")
+);
+
+
+
+if(target){
+
+
+event.preventDefault();
+
+
+target.scrollIntoView({
+
+behavior:
+"smooth",
+
+block:
+"start"
+
+});
+
+
+}
+
+
+});
+
+
+});
+
+
+
+
+
+
+
+
+
+/* ===============================
+   ACTIVE NAVIGATION
+================================ */
+
+
+const sections =
+document.querySelectorAll(
+"section[id]"
+);
+
+
+
+const links =
+document.querySelectorAll(
+".navbar a"
+);
+
+
+
+const sectionObserver =
+new IntersectionObserver(
+
+entries => {
+
+
+entries.forEach(entry => {
+
+
+if(entry.isIntersecting){
+
+
+
+links.forEach(link => {
+
+
+link.classList.remove(
+"active"
+);
+
+
+
+if(
+link.hash ===
+"#"+entry.target.id
+){
+
+link.classList.add(
+"active"
+);
+
+}
+
+
+});
+
+
+}
+
+
+});
+
+
+},
+
+{
+threshold:.5
+}
+
+);
+
+
+
+sections.forEach(
+section =>
+sectionObserver.observe(section)
+);
+
+
+
+
+
+
+
+
+
+/* ===============================
+   LEAFLET MAP
+================================ */
+
+
+const mapElement =
+document.querySelector(
+"#map"
+);
+
+
+
+function loadMap(){
+
+
+if(
+!mapElement ||
+!window.L
+)
+
+return;
+
+
+
+const office =
+[
+54.5820213,
+-1.1771227
+];
+
+
+
+const map =
+L.map(
+mapElement,
+{
+scrollWheelZoom:false,
+zoomControl:true
+}
+)
+.setView(
+office,
+16
+);
+
+
+
+L.tileLayer(
+
+"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+
+{
+
+maxZoom:19,
+
+attribution:
+"&copy; OpenStreetMap contributors"
+
+}
+
+)
+
+.addTo(map);
+
+
+
+L.marker(
+office
+)
+
+.addTo(map)
+
+.bindPopup(
+
+`
+<b>
+Ghost Innovations LTD
+</b>
+<br>
+Units 3 & 4 North Street
+<br>
+Middlesbrough TS6 6AN
+`
+
+)
+
+.openPopup();
+
+
+
+}
+
+
+
+
+if(mapElement){
+
+
+const mapObserver =
+new IntersectionObserver(
+
+entries => {
+
+
+if(entries[0].isIntersecting){
+
+
+loadMap();
+
+
+mapObserver.disconnect();
+
+
+}
+
+
+}
+
+);
+
+
+
+mapObserver.observe(
+mapElement
+);
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   SAFARI FIXES
+================================ */
+
+
+document.addEventListener(
+"touchstart",
+()=>{},
+{
+passive:true
+}
+);
