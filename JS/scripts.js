@@ -1,126 +1,172 @@
 "use strict";
 
+
+
 /* ===============================
-STARTUP LOADER
+   LOADER
 ================================ */
+
 
 window.addEventListener("load", () => {
 
+    const loader =
+    document.querySelector(".loader");
 
-const loader =
-document.querySelector(".loader");
 
+    if(loader){
 
-if(loader){
+        setTimeout(() => {
 
-    setTimeout(() => {
+            loader.classList.add("hide");
 
-        loader.classList.add("hide");
+        }, 1800);
 
-    }, 2200);
-
-}
-
+    }
 
 });
 
+
+
+
+
+
+
 /* ===============================
-MOBILE NAVIGATION
+   MOBILE MENU
 ================================ */
+
 
 const menuButton =
 document.querySelector(".nav-toggle");
 
-const navigation =
+
+const navbar =
 document.querySelector(".navbar");
 
-if(menuButton && navigation){
 
 
-function toggleMenu(state){
+if(menuButton && navbar){
 
 
-    const open =
-    state ?? 
-    !navigation.classList.contains("is-open");
+    const toggleMenu = () => {
 
 
-    navigation.classList.toggle(
-        "is-open",
-        open
-    );
+        const open =
+        navbar.classList.toggle(
+            "is-open"
+        );
 
 
-    menuButton.setAttribute(
-        "aria-expanded",
-        open
-    );
+        menuButton.setAttribute(
+            "aria-expanded",
+            String(open)
+        );
 
 
-}
+    };
 
 
 
-
-menuButton.addEventListener(
-    "click",
-    () => toggleMenu()
-);
-
-
-
-
-
-navigation
-.querySelectorAll("a")
-.forEach(link => {
-
-
-    link.addEventListener(
+    menuButton.addEventListener(
         "click",
-        () => toggleMenu(false)
+        toggleMenu
     );
 
 
-});
+
+
+    navbar
+    .querySelectorAll("a")
+    .forEach(link => {
+
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                navbar.classList.remove(
+                    "is-open"
+                );
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+        );
+
+
+    });
 
 
 
 
 
-document.addEventListener(
-    "keydown",
-    event => {
+    document.addEventListener(
+        "keydown",
+        event => {
 
 
-        if(event.key === "Escape"){
+            if(event.key === "Escape"){
 
-            toggleMenu(false);
+                navbar.classList.remove(
+                    "is-open"
+                );
+
+            }
+
 
         }
-
-
-    }
-);
+    );
 
 
 }
 
+
+
+
+
+
+
+
+
 /* ===============================
-SCROLL REVEAL
+   SCROLL REVEAL
 ================================ */
+
 
 const revealItems =
 document.querySelectorAll(
 ".reveal"
 );
 
-const revealObserver =
+
+
+if(
+window.matchMedia(
+"(prefers-reduced-motion: reduce)"
+).matches
+){
+
+    revealItems.forEach(
+        item =>
+        item.classList.add("show")
+    );
+
+
+}
+
+else {
+
+
+const observer =
 new IntersectionObserver(
 
-(entries)=>{
+entries => {
 
-entries.forEach(entry=>{
+
+entries.forEach(entry => {
 
 
 if(entry.isIntersecting){
@@ -131,7 +177,7 @@ if(entry.isIntersecting){
     );
 
 
-    revealObserver.unobserve(
+    observer.unobserve(
         entry.target
     );
 
@@ -141,154 +187,266 @@ if(entry.isIntersecting){
 
 });
 
+
 },
 
 {
-
 threshold:.15
-
 }
 
 );
 
+
+
 revealItems.forEach(
 item =>
-revealObserver.observe(item)
+observer.observe(item)
 );
 
+
+}
+
+
+
+
+
+
+
+
+
 /* ===============================
-ANIMATED NUMBERS
+   FAST COUNTERS
 ================================ */
+
 
 const counters =
 document.querySelectorAll(
 "[data-number]"
 );
 
+
+
 const counterObserver =
 new IntersectionObserver(
 
-entries=>{
+entries => {
 
-entries.forEach(entry=>{
+
+entries.forEach(entry => {
+
 
 if(entry.isIntersecting){
 
 
-const element =
-entry.target;
+    const counter =
+    entry.target;
 
 
-const target =
-Number(
-    element.dataset.number
-);
+    const target =
+    Number(
+        counter.dataset.number
+    );
 
 
-
-let current = 0;
-
-
-
-const speed =
-Math.max(
-    2,
-    1500 / target
-);
+    let start =
+    0;
 
 
-
-const timer =
-setInterval(()=>{
-
-
-    current++;
+    const duration =
+    800;
 
 
-    element.textContent =
-    current;
+    const startTime =
+    performance.now();
 
 
 
-    if(current >= target){
+    function update(time){
 
-        clearInterval(timer);
+
+        const progress =
+        Math.min(
+            (time-startTime)
+            /
+            duration,
+            1
+        );
+
+
+
+        counter.textContent =
+        Math.floor(
+            progress * target
+        );
+
+
+
+        if(progress < 1){
+
+            requestAnimationFrame(
+                update
+            );
+
+        }
+
+        else {
+
+            counter.textContent =
+            target;
+
+        }
+
 
     }
 
 
-},speed);
+    requestAnimationFrame(
+        update
+    );
 
 
-
-counterObserver.unobserve(
-    element
-);
+    counterObserver.unobserve(
+        counter
+    );
 
 
 }
 
+
 });
+
 
 },
 
 {
-
 threshold:.7
-
 }
 
 );
+
+
 
 counters.forEach(
 counter =>
 counterObserver.observe(counter)
 );
 
+
+
+
+
+
+
+
+
 /* ===============================
-ACTIVE NAVIGATION
+   SMOOTH SCROLL
 ================================ */
+
+
+document
+.querySelectorAll(
+'a[href^="#"]'
+)
+.forEach(anchor => {
+
+
+anchor.addEventListener(
+"click",
+event => {
+
+
+const target =
+document.querySelector(
+anchor.getAttribute("href")
+);
+
+
+
+if(target){
+
+
+event.preventDefault();
+
+
+target.scrollIntoView({
+
+behavior:
+"smooth",
+
+block:
+"start"
+
+});
+
+
+}
+
+
+});
+
+
+});
+
+
+
+
+
+
+
+
+
+/* ===============================
+   ACTIVE NAVIGATION
+================================ */
+
 
 const sections =
 document.querySelectorAll(
 "section[id]"
 );
 
-const navLinks =
+
+
+const links =
 document.querySelectorAll(
 ".navbar a"
 );
 
+
+
 const sectionObserver =
 new IntersectionObserver(
 
-entries=>{
+entries => {
 
-entries.forEach(entry=>{
+
+entries.forEach(entry => {
+
 
 if(entry.isIntersecting){
 
 
-navLinks.forEach(link=>{
+
+links.forEach(link => {
 
 
-    link.classList.remove(
-        "active"
-    );
+link.classList.remove(
+"active"
+);
 
 
 
-    if(
-    link.getAttribute("href")
-    ===
-    "#" + entry.target.id
-    ){
+if(
+link.hash ===
+"#"+entry.target.id
+){
 
-        link.classList.add(
-            "active"
-        );
+link.classList.add(
+"active"
+);
 
-    }
+}
 
 
 });
@@ -296,17 +454,19 @@ navLinks.forEach(link=>{
 
 }
 
+
 });
+
 
 },
 
 {
-
-threshold:.45
-
+threshold:.5
 }
 
 );
+
+
 
 sections.forEach(
 section =>
@@ -314,52 +474,36 @@ sectionObserver.observe(section)
 );
 
 
-/* ===============================
-CUSTOM CURSOR EFFECT
-================================ */
 
-const cursor =
-document.createElement(
-"div"
-);
 
-cursor.className =
-"cursor-glow";
 
-document.body.appendChild(
-cursor
-);
 
-document.addEventListener(
-"mousemove",
-event=>{
 
-cursor.style.left =
-event.clientX + "px";
 
-cursor.style.top =
-event.clientY + "px";
-
-}
-
-);
 
 /* ===============================
-MAP LOADING
+   LEAFLET MAP
 ================================ */
 
-const map =
+
+const mapElement =
 document.querySelector(
 "#map"
 );
 
-function createMap(){
+
+
+function loadMap(){
+
 
 if(
-!map ||
+!mapElement ||
 !window.L
 )
+
 return;
+
+
 
 const office =
 [
@@ -367,17 +511,22 @@ const office =
 -1.1771227
 ];
 
-const leaflet =
+
+
+const map =
 L.map(
-map,
+mapElement,
 {
-scrollWheelZoom:false
+scrollWheelZoom:false,
+zoomControl:true
 }
 )
 .setView(
 office,
 16
 );
+
+
 
 L.tileLayer(
 
@@ -388,94 +537,94 @@ L.tileLayer(
 maxZoom:19,
 
 attribution:
-"© OpenStreetMap"
+"&copy; OpenStreetMap contributors"
 
 }
 
 )
 
-.addTo(
-leaflet
-);
+.addTo(map);
+
+
 
 L.marker(
 office
 )
 
-.addTo(
-leaflet
-)
+.addTo(map)
 
 .bindPopup(
 
-`<strong>
-Ghost Innovations LTD </strong> <br>
-Units 3 & 4 <br>
-North Street <br>
-Middlesbrough TS6 6AN`
+`
+<b>
+Ghost Innovations LTD
+</b>
+<br>
+Units 3 & 4 North Street
+<br>
+Middlesbrough TS6 6AN
+`
 
 )
 
 .openPopup();
 
+
+
 }
 
-if(map){
+
+
+
+if(mapElement){
+
 
 const mapObserver =
 new IntersectionObserver(
 
-entries=>{
+entries => {
+
 
 if(entries[0].isIntersecting){
 
-createMap();
+
+loadMap();
+
 
 mapObserver.disconnect();
 
+
 }
+
 
 }
 
 );
 
-mapObserver.observe(map);
+
+
+mapObserver.observe(
+mapElement
+);
+
 
 }
+
+
+
+
+
+
 
 /* ===============================
-PAGE SMOOTH SCROLL
+   SAFARI FIXES
 ================================ */
 
-document
-.querySelectorAll(
-'a[href^="#"]'
-)
-.forEach(anchor=>{
 
-anchor.addEventListener(
-"click",
-event=>{
-
-const target =
-document.querySelector(
-anchor.getAttribute("href")
-);
-
-if(target){
-
-event.preventDefault();
-
-target.scrollIntoView({
-
-behavior:"smooth"
-
-});
-
+document.addEventListener(
+"touchstart",
+()=>{},
+{
+passive:true
 }
-
-}
-
 );
-
-});
