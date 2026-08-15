@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 :root {
   --bg: #02060b;
   --bg-soft: #06111c;
@@ -371,6 +372,1395 @@ button {
   margin-top: 10px;
   color: var(--muted);
 }
+=======
+/* =========================================================
+   GHOST INNOVATIONS V4
+   FULL RESPONSIVE CSS
+   ALL FIXED SIZES IN REM
+   iOS + ANDROID OPTIMISED
+========================================================= */
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+    --bg: #02060b;
+    --bg-soft: #06111c;
+
+    --panel: rgba(10, 20, 32, 0.78);
+    --panel-solid: #08121f;
+
+    --text: #f5f9ff;
+    --muted: #9aaabd;
+
+    --accent: #00abf0;
+    --accent-glow: rgba(0, 171, 240, 0.35);
+
+    --border: rgba(255, 255, 255, 0.09);
+
+    --radius: 1.375rem;
+
+    --container: min(75rem, calc(100% - 2.5rem));
+}
+
+
+/* =========================================================
+   LIGHT MODE
+========================================================= */
+
+body.light-mode {
+    --bg: #f8fbff;
+    --bg-soft: #eef4fb;
+
+    --surface: rgba(255, 255, 255, 0.85);
+    --surface-hover: #f4f8ff;
+
+    --panel: rgba(255, 255, 255, 0.85);
+    --panel-solid: #ffffff;
+
+    --text: #111827;
+    --muted: #5a6b86;
+
+    --accent: #004b9d;
+    --accent-soft: rgba(0, 75, 157, 0.16);
+    --accent-glow: rgba(0, 75, 157, 0.20);
+
+    --top-glow: rgba(0, 75, 157, 0.08);
+    --header-bg: rgba(255, 255, 255, 0.75);
+
+    --border: #d9e3ef;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+
+    overflow-x: hidden;
+
+    scroll-behavior: smooth;
+
+    background: var(--bg);
+
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(0, 171, 240, 0.18),
+            transparent 31.25rem
+        ),
+        linear-gradient(
+            180deg,
+            #02060b,
+            #030913
+        );
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* =========================================================
+   LIGHT MODE BODY
+========================================================= */
+
+body.light-mode {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(0, 75, 157, 0.08),
+            transparent 31.25rem
+        ),
+        linear-gradient(
+            180deg,
+            #f8fbff,
+            #f0f6ff
+        );
+}
+
+
+/* =========================================================
+   BASIC ELEMENTS
+========================================================= */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    z-index: -5;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.grid {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.35;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 171, 240, 0.06) 0.0625rem,
+            transparent 0.0625rem
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 171, 240, 0.06) 0.0625rem,
+            transparent 0.0625rem
+        );
+
+    background-size: 4.375rem 4.375rem;
+}
+
+body.light-mode .grid {
+    background-image:
+        linear-gradient(
+            rgba(0, 75, 157, 0.04) 0.0625rem,
+            transparent 0.0625rem
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 75, 157, 0.04) 0.0625rem,
+            transparent 0.0625rem
+        );
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.glow {
+    position: absolute;
+
+    width: 31.25rem;
+    height: 31.25rem;
+
+    border-radius: 50%;
+
+    filter: blur(8.75rem);
+
+    opacity: 0.18;
+}
+
+.glow-one {
+    top: -15.625rem;
+    right: -15.625rem;
+
+    background: var(--accent);
+}
+
+.glow-two {
+    bottom: -15.625rem;
+    left: -15.625rem;
+
+    background: #0055ff;
+}
+
+body.light-mode .glow-two {
+    background: rgba(0, 75, 157, 0.5);
+}
+
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+.loader {
+    position: fixed;
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background: var(--bg);
+
+    transition:
+        opacity 0.6s ease,
+        visibility 0.6s ease;
+}
+
+.loader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-logo img {
+    width: clamp(
+        6.25rem,
+        25vw,
+        10rem
+    );
+}
+
+.loader p {
+    margin-top: 1.875rem;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.25rem;
+
+    color: var(--accent);
+}
+
+.loader-bar {
+    width: 13.75rem;
+    height: 0.1875rem;
+
+    margin-top: 1.25rem;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    overflow: hidden;
+}
+
+body.light-mode .loader-bar {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.loader-bar span {
+    display: block;
+
+    width: 0;
+    height: 100%;
+
+    background: var(--accent);
+
+    animation: loading 1.5s ease forwards;
+}
+
+@keyframes loading {
+    to {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding:
+        calc(1.125rem + env(safe-area-inset-top))
+        max(1.25rem, env(safe-area-inset-right))
+        1.125rem
+        max(1.25rem, env(safe-area-inset-left));
+
+    background: rgba(2, 6, 11, 0.82);
+
+    border-bottom: 0.0625rem solid var(--border);
+
+    -webkit-backdrop-filter: blur(0.9375rem);
+    backdrop-filter: blur(0.9375rem);
+}
+
+body.light-mode .header {
+    background: rgba(255, 255, 255, 0.75);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-img {
+    width: clamp(
+        8.125rem,
+        18vw,
+        11.875rem
+    );
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+
+    margin-left: auto;
+
+    gap: 1.5rem;
+}
+
+.navbar a {
+    position: relative;
+
+    color: #dbe8f5;
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    transition: color 0.25s ease;
+}
+
+body.light-mode .navbar a {
+    color: #111827;
+}
+
+.navbar a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -0.5rem;
+
+    width: 0;
+    height: 0.125rem;
+
+    background: var(--accent);
+
+    transition: width 0.25s ease;
+}
+
+.navbar a:hover {
+    color: var(--accent);
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   THEME TOGGLE
+========================================================= */
+
+.theme-toggle {
+    width: 2.8125rem;
+    height: 2.8125rem;
+
+    margin-left: 0.5rem;
+
+    margin-right: 0;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0.0625rem solid var(--border);
+
+    border-radius: 0.75rem;
+
+    background: var(--panel-solid);
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    font-size: 1.25rem;
+
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.theme-toggle:hover {
+    box-shadow:
+        0 0 1.25rem var(--accent-glow);
+}
+
+.theme-toggle .sun-icon {
+    display: none;
+}
+
+body.light-mode .theme-toggle .sun-icon {
+    display: block;
+    color: #111827;
+}
+
+body.light-mode .theme-toggle .moon-icon {
+    display: none;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.nav-toggle {
+    display: none;
+
+    width: 2.8125rem;
+    height: 2.8125rem;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 0.3125rem;
+
+    border: 0.0625rem solid var(--border);
+
+    border-radius: 0.75rem;
+
+    background: var(--panel-solid);
+
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    width: 1.375rem;
+    height: 0.125rem;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+body.light-mode .nav-toggle span {
+    background: #111827;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    width: var(--container);
+
+    min-height: 100svh;
+    min-height: 100dvh;
+
+    margin: auto;
+
+    padding-top: 8.125rem;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        26.25rem;
+
+    align-items: center;
+
+    gap: 4.375rem;
+}
+
+.system-status {
+    color: var(--muted);
+
+    letter-spacing: 0.1875rem;
+
+    font-size: 0.8125rem;
+}
+
+.system-status span {
+    color: #00ff88;
+}
+
+body.light-mode .system-status span {
+    color: #00aa44;
+}
+
+.hero h1 {
+    margin: 1.25rem 0;
+
+    font-size: clamp(
+        2.8125rem,
+        7vw,
+        5.3125rem
+    );
+
+    line-height: 1.02;
+
+    letter-spacing: -0.125rem;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero-description {
+    max-width: 40.625rem;
+
+    color: var(--muted);
+
+    font-size: 1.25rem;
+
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    margin-top: 2.1875rem;
+
+    display: flex;
+
+    gap: 0.9375rem;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 3.125rem;
+
+    padding: 0 2rem;
+
+    border-radius: 3.125rem;
+
+    font-weight: 600;
+
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.button.primary {
+    background: var(--accent);
+
+    color: #ffffff;
+}
+
+.button.primary:hover {
+    box-shadow:
+        0 0 2.1875rem var(--accent-glow);
+}
+
+.button.secondary {
+    border: 0.0625rem solid var(--accent);
+
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section {
+    width: var(--container);
+
+    margin: 8.125rem auto;
+}
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 3.75rem;
+}
+
+.section-heading p {
+    margin: 0 0 0.75rem;
+
+    color: var(--accent);
+
+    font-size: 0.8125rem;
+
+    letter-spacing: 0.3125rem;
+
+    font-weight: 600;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    font-size: clamp(
+        2.375rem,
+        6vw,
+        4.375rem
+    );
+
+    line-height: 1.1;
+
+    letter-spacing: -0.0625rem;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats {
+    width: var(--container);
+
+    margin: 3.125rem auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 1.25rem;
+}
+
+.stat {
+    padding: 2.1875rem 1.25rem;
+
+    text-align: center;
+
+    background: var(--panel);
+
+    border: 0.0625rem solid var(--border);
+
+    border-radius: var(--radius);
+}
+
+.stat h2 {
+    margin: 0;
+
+    font-size: clamp(
+        2.1875rem,
+        5vw,
+        3.4375rem
+    );
+
+    color: var(--accent);
+}
+
+.stat p {
+    margin-top: 0.625rem;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   GLASS PANELS
+========================================================= */
+
+.vision-card,
+.video-card,
+.project-card,
+.contact-grid > div {
+    background: var(--panel);
+
+    border: 0.0625rem solid var(--border);
+
+    border-radius: var(--radius);
+
+    -webkit-backdrop-filter: blur(0.9375rem);
+    backdrop-filter: blur(0.9375rem);
+}
+
+
+/* =========================================================
+   VISION
+========================================================= */
+
+.vision-card {
+    padding: clamp(
+        1.5625rem,
+        5vw,
+        3.4375rem
+    );
+
+    color: var(--muted);
+
+    font-size: 1.25rem;
+
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   VIDEOS
+========================================================= */
+
+.video-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 1.875rem;
+}
+
+.video-card {
+    overflow: hidden;
+}
+
+.video-card iframe {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    display: block;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3.75rem;
+}
+
+.project-card {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 3.75rem;
+
+    padding: clamp(
+        1.5625rem,
+        5vw,
+        3.4375rem
+    );
+
+    align-items: center;
+}
+
+.project-card.reverse {
+    direction: rtl;
+}
+
+.project-card.reverse .project-info {
+    direction: ltr;
+}
+
+.project-image {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.project-image img {
+    max-height: 28.125rem;
+
+    object-fit: contain;
+}
+
+.project-info span {
+    color: var(--accent);
+
+    letter-spacing: 0.25rem;
+
+    font-size: 0.75rem;
+}
+
+.project-info h3 {
+    margin: 0.9375rem 0;
+
+    font-size: clamp(
+        2.1875rem,
+        5vw,
+        3.75rem
+    );
+
+    line-height: 1;
+}
+
+.project-info h4 {
+    margin: 0 0 1.25rem;
+
+    color: #72dcff;
+
+    font-size: 1.375rem;
+}
+
+.project-info p {
+    margin-bottom: 1.5625rem;
+
+    color: var(--muted);
+
+    font-size: 1.0625rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 1.875rem;
+}
+
+.contact-grid > div {
+    padding: 2.5rem;
+
+    text-align: center;
+}
+
+.contact-grid h3 {
+    margin-top: 0;
+
+    font-size: 1.875rem;
+}
+
+.contact-grid address {
+    color: var(--muted);
+
+    font-style: normal;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+
+.social-icons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 0.9375rem;
+
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    width: 3.125rem;
+    height: 3.125rem;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 0.0625rem solid var(--border);
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent);
+
+    transform: translateY(-0.25rem);
+}
+
+
+/* =========================================================
+   MAP
+========================================================= */
+
+#map {
+    width: 100%;
+    height: 31.25rem;
+
+    margin-top: 3.125rem;
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    border: 0.0625rem solid var(--border);
+
+    transform: translateZ(0);
+
+    -webkit-transform: translateZ(0);
+}
+
+.leaflet-container {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    margin-top: 6.25rem;
+
+    padding: 4.375rem 1.25rem 0;
+
+    text-align: center;
+
+    border-top: 0.0625rem solid var(--border);
+}
+
+.footer h3 {
+    margin: 0;
+
+    color: var(--accent);
+
+    font-size: 1.875rem;
+}
+
+.footer p {
+    color: var(--muted);
+}
+
+.footer-bottom {
+    margin-top: 3.125rem;
+
+    padding: 1.5625rem;
+
+    color: #708095;
+
+    background: rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   TABLETS
+   68.75rem = 1100px
+========================================================= */
+
+@media (max-width: 68.75rem) {
+
+    .hero {
+        grid-template-columns:
+            1fr
+            21.875rem;
+
+        gap: 2.5rem;
+    }
+
+    .project-card {
+        gap: 2.5rem;
+    }
+
+    .navbar {
+        gap: 1.25rem;
+    }
+
+    .stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   48rem = 768px
+========================================================= */
+
+@media (max-width: 48rem) {
+
+    /* -----------------------------------------------------
+       GENERAL
+    ----------------------------------------------------- */
+
+    html {
+        scroll-padding-top: 5.625rem;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+
+    /* -----------------------------------------------------
+       HEADER
+    ----------------------------------------------------- */
+
+    .header {
+        padding:
+            calc(0.875rem + env(safe-area-inset-top))
+            1.125rem
+            0.875rem;
+    }
+
+
+    /* -----------------------------------------------------
+       LOGO
+    ----------------------------------------------------- */
+
+    .logo-img {
+        width: clamp(
+            7.5rem,
+            38vw,
+            9.375rem
+        );
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE MENU
+    ----------------------------------------------------- */
+
+    .nav-toggle {
+        display: flex;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE THEME
+    ----------------------------------------------------- */
+
+    .theme-toggle {
+        display: flex;
+
+        width: 2.5rem;
+        height: 2.5rem;
+
+        margin-left: 0.375rem;
+
+        font-size: 1.125rem;
+    }
+
+
+    /* -----------------------------------------------------
+       MOBILE NAVIGATION
+    ----------------------------------------------------- */
+
+    .navbar {
+        position: absolute;
+
+        top: 100%;
+
+        left: 0.9375rem;
+        right: 0.9375rem;
+
+        display: none;
+
+        margin-left: 0;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0.5rem;
+
+        padding: 1.25rem;
+
+        background: rgba(2, 6, 11, 0.96);
+
+        border: 0.0625rem solid var(--border);
+
+        border-radius: 1.25rem;
+    }
+
+    .navbar.is-open {
+        display: flex;
+    }
+
+    .navbar a {
+        width: 100%;
+
+        padding: 0.9375rem;
+
+        text-align: center;
+
+        border-radius: 0.75rem;
+    }
+
+    .navbar a:hover {
+        background: rgba(0, 171, 240, 0.1);
+    }
+
+    body.light-mode .navbar {
+        background: rgba(255, 255, 255, 0.96);
+    }
+
+    body.light-mode .navbar a:hover {
+        background: rgba(0, 75, 157, 0.1);
+    }
+
+
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
+
+    .hero {
+        width: calc(100% - 2.25rem);
+
+        min-height: auto;
+
+        padding-top: 8.125rem;
+        padding-bottom: 5rem;
+
+        display: flex;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 2.5rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(
+            2.625rem,
+            12vw,
+            3.625rem
+        );
+    }
+
+    .hero-description {
+        font-size: 1.0625rem;
+
+        line-height: 1.7;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO BUTTONS
+    ----------------------------------------------------- */
+
+    .hero-buttons {
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 0.75rem;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       STATS
+    ----------------------------------------------------- */
+
+    .stats {
+        width: calc(100% - 2.25rem);
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 0.9375rem;
+    }
+
+    .stat {
+        padding: 1.5625rem 0.625rem;
+    }
+
+    .stat h2 {
+        font-size: 2.375rem;
+    }
+
+
+    /* -----------------------------------------------------
+       SECTIONS
+    ----------------------------------------------------- */
+
+    .section {
+        width: calc(100% - 2.25rem);
+
+        margin: 5.625rem auto;
+    }
+
+    .section-heading {
+        margin-bottom: 2.1875rem;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(
+            2.125rem,
+            9vw,
+            3rem
+        );
+    }
+
+
+    /* -----------------------------------------------------
+       VIDEOS
+    ----------------------------------------------------- */
+
+    .video-grid {
+        grid-template-columns: 1fr;
+
+        gap: 1.25rem;
+    }
+
+    .video-card iframe {
+        aspect-ratio: 16 / 9;
+    }
+
+
+    /* -----------------------------------------------------
+       PROJECTS
+    ----------------------------------------------------- */
+
+    .projects {
+        gap: 1.5625rem;
+    }
+
+    .project-card,
+    .project-card.reverse {
+        direction: ltr;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 1.5625rem;
+
+        padding: 1.5625rem;
+    }
+
+    .project-image {
+        order: 1;
+    }
+
+    .project-info {
+        order: 2;
+    }
+
+    .project-image img {
+        max-height: none;
+
+        width: 100%;
+    }
+
+    .project-info h3 {
+        font-size: clamp(
+            2.125rem,
+            10vw,
+            2.8125rem
+        );
+    }
+
+    .project-info h4 {
+        font-size: 1.25rem;
+    }
+
+    .project-info p {
+        font-size: 1rem;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT
+    ----------------------------------------------------- */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid > div {
+        padding: 1.875rem 1.25rem;
+    }
+
+    .contact-grid h3 {
+        font-size: 1.625rem;
+    }
+
+
+    /* -----------------------------------------------------
+       MAP
+    ----------------------------------------------------- */
+
+    #map {
+        width: calc(100% - 2.25rem);
+
+        height: 21.875rem;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+>>>>>>> Stashed changes
 
 .vision-card, .video-card, .project-card, .contact-grid > div {
   background: var(--panel);
@@ -421,6 +1811,7 @@ button {
   flex-direction: column;
 }
 
+<<<<<<< Updated upstream
 .project-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -704,8 +2095,222 @@ button {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+=======
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    .footer {
+        padding-top: 3.75rem;
+    }
+
+    .footer h3 {
+        font-size: 1.625rem;
+    }
 
 
+    /* -----------------------------------------------------
+       MOBILE PERFORMANCE
+    ----------------------------------------------------- */
+
+    img {
+        content-visibility: auto;
+    }
+
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+
+/* =========================================================
+   LARGE PHONES
+   26.875rem - 48rem
+   430px - 768px
+========================================================= */
+
+@media (min-width: 26.875rem) and (max-width: 48rem) {
+
+    .hero {
+        padding-top: 9.375rem;
+    }
+
+    .hero h1 {
+        font-size: 3.75rem;
+    }
+
+    #map {
+        height: 26.25rem;
+    }
+}
+
+
+/* =========================================================
+   TABLETS
+   48.0625rem - 64rem
+   769px - 1024px
+========================================================= */
+
+@media (min-width: 48.0625rem) and (max-width: 64rem) {
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        order: -1;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   768px - 900px
+   PROJECT ADJUSTMENT
+========================================================= */
+
+@media (min-width: 48rem) and (max-width: 56.25rem) {
+
+    .project-card {
+        padding: 1.875rem;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   MAX 390px = 24.375rem
+========================================================= */
+
+@media (max-width: 24.375rem) {
+
+    .header {
+        padding:
+            calc(0.625rem + env(safe-area-inset-top))
+            0.625rem
+            0.625rem;
+    }
+
+    .logo-img {
+        width: 6.875rem;
+    }
+
+    .nav-toggle,
+    .theme-toggle {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .theme-toggle {
+        margin-left: 0.1875rem;
+
+        font-size: 1rem;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2.375rem;
+    }
+
+    .section-heading h2 {
+        font-size: 2.125rem;
+    }
+
+    .project-card {
+        padding: 1.25rem;
+    }
+}
+
+
+/* =========================================================
+   FOLD DEVICES
+   MAX 320px = 20rem
+========================================================= */
+
+@media (max-width: 20rem) {
+
+    .header {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .logo-img {
+        width: 6.875rem;
+    }
+
+    .hero h1 {
+        font-size: 2.125rem;
+    }
+}
+
+
+/* =========================================================
+   IOS SAFARI FIXES
+========================================================= */
+
+@supports (-webkit-touch-callout: none) {
+
+    html {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .header {
+        background: rgba(2, 6, 11, 0.95);
+    }
+
+    .glow {
+        display: none;
+    }
+
+    .grid {
+        display: none;
+    }
+
+    .project-card,
+    .video-card,
+    .contact-grid > div {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+>>>>>>> Stashed changes
+
+        transition: none !important;
+
+<<<<<<< Updated upstream
   .project-card + .project-card {
     margin-top: 25px;
   }
@@ -899,3 +2504,8 @@ button {
     scroll-behavior: auto !important;
   }
 }
+=======
+        scroll-behavior: auto !important;
+    }
+}
+>>>>>>> Stashed changes
